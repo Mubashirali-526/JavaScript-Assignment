@@ -1,0 +1,211 @@
+<!Doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Interactive Site</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+
+    <!--  NAVBAR  -->
+
+    <nav>
+      <span class="nav-logo">⚡ JavaScript Lab</span>
+      <div class="nav-right">
+        <label class="toggle-wrap">
+          <span class="mode-icon">☀️</span>
+          <label class="toggle-switch">
+            <input type="checkbox" id="dark-toggle" />
+            <span class="toggle-track"></span>
+            <span class="toggle-knob"></span>
+          </label>
+          <span class="mode-icon">🌙</span>
+        </label>
+      </div>
+    </nav>
+
+    <main>
+      <!--  SECTION 1: COUNTER  -->
+
+      <section id="sec-counter">
+        <div class="section-label">Feature 01</div>
+        <h2>Interactive Counter</h2>
+        <p class="section-desc">
+          Variables, operators, control flow, DOM manipulation — all in one
+          widget.
+        </p>
+
+        <div class="counter-card">
+          <div id="counter-display">0</div>
+          <div class="counter-btns">
+            <button class="btn btn-outline" onclick="changeCounter(-1)">
+              − Decrease
+            </button>
+            <button class="btn btn-primary" onclick="changeCounter(1)">
+              + Increase
+            </button>
+            <button class="btn btn-danger" onclick="resetCounter()">
+              ↺ Reset
+            </button>
+          </div>
+          <p id="counter-msg"></p>
+        </div>
+      </section>
+
+      <!--  SECTION 2: IMAGE SLIDER  -->
+
+      <section id="sec-slider">
+        <div class="section-label">Feature 02</div>
+        <h2>Image Slider</h2>
+        <p class="section-desc">
+          Arrays, loops, functions, classList — navigating slides with JS.
+        </p>
+
+        <div class="slider-wrapper">
+          <div class="slider-track">
+            <div class="slide active">
+              <div class="slide-emoji">🚀</div>
+              <div class="slide-title">JavaScript is Powerful</div>
+              <div class="slide-text">
+                From DOM manipulation to full-stack apps — JS runs the modern
+                web.
+              </div>
+            </div>
+            <div class="slide">
+              <div class="slide-emoji">🌿</div>
+              <div class="slide-title">Clean Code Matters</div>
+              <div class="slide-text">
+                Readable, well-structured code is a skill as important as logic
+                itself.
+              </div>
+            </div>
+            <div class="slide">
+              <div class="slide-emoji">🎨</div>
+              <div class="slide-title">Design with Purpose</div>
+              <div class="slide-text">
+                Good UI removes friction. Every pixel should earn its place on
+                screen.
+              </div>
+            </div>
+            <div class="slide">
+              <div class="slide-emoji">🔥</div>
+              <div class="slide-title">Keep Building</div>
+              <div class="slide-text">
+                Every project teaches you something new. Ship it, learn,
+                improve.
+              </div>
+            </div>
+          </div>
+
+          <div class="slider-controls">
+            <button class="slider-btn" onclick="moveSlide(-1)">‹</button>
+            <div class="slider-dots" id="dots"></div>
+            <button class="slider-btn" onclick="moveSlide(1)">›</button>
+          </div>
+        </div>
+      </section>
+
+      <!--  SECTION 3: FORM VALIDATION  -->
+
+      <section id="sec-form">
+        <div class="section-label">Feature 03</div>
+        <h2>Form Validation</h2>
+        <p class="section-desc">
+          Real-time validation using conditionals, string methods, and DOM
+          events.
+        </p>
+
+        <div class="form-card">
+          <div class="form-row">
+            <label for="inp-name">Full Name</label>
+            <input type="text" id="inp-name" placeholder="Ali Hassan" />
+            <div class="field-msg" id="msg-name"></div>
+          </div>
+
+          <div class="form-row">
+            <label for="inp-email">Email Address</label>
+            <input type="email" id="inp-email" placeholder="ali@example.com" />
+            <div class="field-msg" id="msg-email"></div>
+          </div>
+
+          <div class="form-row">
+            <label for="inp-age">Age</label>
+            <input
+              type="number"
+              id="inp-age"
+              placeholder="18"
+              min="1"
+              max="120"
+            />
+            <div class="field-msg" id="msg-age"></div>
+          </div>
+
+          <div class="form-row">
+            <label for="inp-course">Course</label>
+            <select id="inp-course">
+              <option value="">— Select a course —</option>
+              <option value="html-css">HTML & CSS</option>
+              <option value="javascript">JavaScript</option>
+              <option value="react">React</option>
+              <option value="node">Node.js</option>
+            </select>
+            <div class="field-msg" id="msg-course"></div>
+          </div>
+
+          <div class="form-submit">
+            <button class="btn btn-primary" onclick="submitForm()">
+              Submit Registration →
+            </button>
+          </div>
+
+          <div id="form-result"></div>
+        </div>
+      </section>
+
+      <!--  SECTION 4: JS QUIZ  -->
+
+      <section id="sec-quiz">
+        <div class="section-label">Feature 04</div>
+        <h2>JS Fundamentals Quiz</h2>
+        <p class="section-desc">
+          Test your knowledge — objects, arrays, and logic in action.
+        </p>
+
+        <div class="quiz-card">
+          <div class="quiz-q" id="quiz-question">Loading...</div>
+          <div class="quiz-options" id="quiz-options"></div>
+          <div class="quiz-feedback" id="quiz-feedback"></div>
+          <div class="quiz-footer">
+            <div id="quiz-progress"></div>
+            <div id="quiz-score">Score: 0 / 0</div>
+            <button
+              class="btn btn-outline"
+              id="quiz-next"
+              onclick="nextQuestion()"
+              style="display: none"
+            >
+              Next →
+            </button>
+            <button
+              class="btn btn-primary"
+              id="quiz-restart"
+              onclick="startQuiz()"
+              style="display: none"
+            >
+              Restart Quiz
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+       &copy; 2026.  All rights reserved.
+    </footer>
+
+    <!-- JS file linked at bottom of body -->
+
+    <script src="script.js"></script>
+  </body>
+</html>
